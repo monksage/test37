@@ -7,7 +7,11 @@ from env_extract import get_env
 
 def read_messages():
     env = get_env()
-    head = {'Authorization': env.DS_AUTH}
+    head = {
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0",
+    "cache-control": "max-age=0",
+    "cookie": "sp_test=1",
+    'Authorization': env.DS_AUTH}
     r = requests.get(env.DS_LINK, headers=head)
     tweets = extract_tweet_urls(r.json())
     tweets = dict(sorted(tweets.items()))

@@ -23,7 +23,7 @@ async def bot(update: Update, context: CallbackContext, chat_id: int, theme_id: 
     # posted_ids = set()
     messages = read_messages()
     posted_ids = set(messages.keys())
-    await send_message(update, context, ['Бот включился в:', f'{datetime.now(pytz.timezone('Europe/Moscow'))} по Московскому времени'], chat_id, theme_id)
+    await send_message(update, context, ['Бот включился в:', f'{datetime.now(pytz.timezone("Europe/Moscow"))} по Московскому времени'], chat_id, theme_id)
     await asyncio.sleep(10)
     while True:
         # Чтение сообщений
