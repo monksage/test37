@@ -38,7 +38,12 @@ def extract_tweet_urls(data: json):
     return tweets
 
 def desc_processing(desc: str):
-    desc = desc.replace('**', '').replace('__', '___').replace('\n', '').replace('>', '\n').replace('- ~~                    ~~', '\n-----------------------')
+    desc = (desc.replace('**', '').
+            replace('__', '').
+            replace('\n', '').
+            replace('>', '\n').
+            replace('- ~~                    ~~', '\n-----------------------')
+    )
     return desc
 
 def test_extract():
